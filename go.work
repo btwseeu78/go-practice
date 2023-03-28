@@ -1,0 +1,10 @@
+go 1.19
+
+use (
+	./cards
+	./pointerexample
+	./practicestruct
+	./rawcodes
+	./slices-array
+	./struct
+)
