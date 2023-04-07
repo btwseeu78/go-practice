@@ -12,7 +12,7 @@ func TestLinks() {
 	}
 
 	for _, link := range links {
-		CheckLink(link)
+		go CheckLink(link)
 	}
 }
 
