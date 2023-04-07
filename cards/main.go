@@ -1,6 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"subroutine"
+)
 
 func main() {
 	cards := newDeck()
@@ -10,4 +13,5 @@ func main() {
 	newDeck.print()
 	newDeck.shufle()
 	newDeck.print()
+	subroutine.TestLinks()
 }
