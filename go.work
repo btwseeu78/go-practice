@@ -4,6 +4,7 @@ use (
 	./cards
 	./pointerexample
 	./practicestruct
+	./protobuf
 	./rawcodes
 	./slices-array
 	./struct

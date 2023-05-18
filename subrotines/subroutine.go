@@ -7,21 +7,27 @@ import (
 
 func TestLinks() {
 	links := []string{
-		"http://google.com",
-		"http://golang.org",
+		"https://google.com",
+		"https://golang.org",
+	}
+	c := make(chan string)
+	for _, link := range links {
+		go CheckLink(link, c)
 	}
 
-	for _, link := range links {
-		go CheckLink(link)
+	for i := range c {
+		fmt.Println(i)
 	}
 }
 
-func CheckLink(link string) {
+func CheckLink(link string, c chan string) {
 	_, err := http.Get(link)
 
 	if err != nil {
 		fmt.Printf("Calling site failed:%s with error %g/n", link, err)
+		c <- "The Url Might Be Down"
 		return
 	}
 	fmt.Printf("Sucessflly called : %s\n", link)
+	c <- "The uRl is working just fine"
 }
